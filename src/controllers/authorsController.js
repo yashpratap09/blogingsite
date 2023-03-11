@@ -42,7 +42,7 @@ const createAuthor = async function (req, res) {
     }
 
     //title should be Mr,Miss,Mrs
-    if (!(title == "Mr" || title == "Miss" || title == "Mrs")) {
+    if (!(title == "Mr" || title == "Miss" || title == "Mrs" || title == "mr" || title == "miss" || title == "mrs" )) {
       return res
         .status(400)
         .send({
@@ -98,6 +98,7 @@ const createAuthor = async function (req, res) {
 //===================================================authorsLogin=============================================================//
 const authorslogin = async function (req, res) {
   try {
+   
     const mail = req.body.email; // here we are taking email,password from our postman body
     const pass = req.body.password;
     const data = req.body;
@@ -121,14 +122,14 @@ const authorslogin = async function (req, res) {
     //it will match the email from author model
     const userMatch = await AuthorModel.findOne({ email: mail });
     if (!userMatch)
-      return res.status(400).send({ status: false, msg: "Email is does doesn't exist in database/ Email is not matched" });
+      return res.status(400).send({ status: false, msg: "Email is does doesn't exist in database/ Email is not matched 1" });
 
     //it will match the password from author model
     const userMatch2 = await AuthorModel.findOne({ password: pass });
     if (!userMatch2)
       return res
         .status(400)
-        .send({ status: false, msg: "password is does doesn't exist in database/ password is not matched" });
+        .send({ status: false, msg: "password is does doesn't exist in database/ password is not matched 2" });
 
     //it will generate the by the help of object Id
     const token = jwt.sign(

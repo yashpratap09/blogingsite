@@ -49,27 +49,27 @@ const createBlog = async function (req, res) {
     if(AuthorId.length==0){ return res.status(400).send({ status: false, msg: "AuthorId doesn't exist in Database" });}
 
 
-    if (!IsArr(tags)) {
-      return res
-        .status(400)
-        .send({
-          status: false,
-          msg: "Tags is required or It should be in Array",
-        });
-    }
+    // if (!IsArr(tags)) {
+    //   return res
+    //     .status(400)
+    //     .send({
+    //       status: false,
+    //       msg: "Tags is required or It should be in Array",
+    //     });
+    // }
     if (!IsVerified(category)) {
       return res
         .status(400)
         .send({ status: false, msg: "category is required" });
     }
-    if (!IsArr(subcategory)) {
-      return res
-        .status(400)
-        .send({
-          status: false,
-          msg: "subcategory is required or It should be in Array",
-        });
-    }
+    // if (!IsArr(subcategory)) {
+    //   return res
+    //     .status(400)
+    //     .send({
+    //       status: false,
+    //       msg: "subcategory is required or It should be in Array",
+    //     });
+    // }
     if (!IsVerified(title)) {
       return res.status(400).send({ status: false, msg: "Title is required" });
     }
@@ -151,8 +151,10 @@ const updateblog = async function (req, res) {
           body: blogdata.body,
           category: blogdata.category,
           isPublished: blogdata.isPublished,
+          tags: blogdata.tags,
+          subcategory: blogdata.subcategory
         },
-        $addToSet: { tags: blogdata.tags, subcategory: blogdata.subcategory },
+
       }
     );
 

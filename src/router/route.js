@@ -19,28 +19,28 @@ const blogsModel = require('../models/blogsModel');
  
 
 
- router.post("/blogs" , authMidd.midd1 , blogsController.createBlog  )       // midd1
+ router.post("/blogs"  ,authMidd.midd1, blogsController.createBlog  )       // midd1 // kam 
 
 
 
 
- router.get("/blogs", authMidd.midd1, blogsController.getBlog )
+ router.get("/blogs", authMidd.midd1, blogsController.getBlog )//authMidd.midd1,
 
 
 
 
 
- router.put("/blogs/:blogId",authMidd.midd1,authMidd.authorisation, blogsController.updateblog )
+ router.put("/blogs/:blogId",authMidd.midd1,authMidd.authorisation, blogsController.updateblog )  //
 
 
 
 
- router.delete("/blogs/:blogId",authMidd.midd1,authMidd.authorisation, blogsController.deleteBlogs  )
+ router.delete("/blogs/:blogId",authMidd.midd1,authMidd.authorisation, blogsController.deleteBlogs  )  //
 
 
  
 
- router.delete("/blogs",authMidd.midd1,authMidd.authorisation, blogsController.DeleteBlog)           // for queryParams
+ router.delete("/blogs",authMidd.midd1,authMidd.authorisation, blogsController.DeleteBlog)           // for queryParams // 
 
 
 //==============================for login==========================================//
