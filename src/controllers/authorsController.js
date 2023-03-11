@@ -12,6 +12,7 @@ const IsVerified = function (value) {
 };
 //=======================================================createAuthor============================================================//
 const createAuthor = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
     const data = req.body;
 
@@ -97,6 +98,7 @@ const createAuthor = async function (req, res) {
 
 //===================================================authorsLogin=============================================================//
 const authorslogin = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
    
     const mail = req.body.email; // here we are taking email,password from our postman body

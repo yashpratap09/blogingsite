@@ -24,6 +24,7 @@ let IsArr = function (value) {
 //================================================createBlog Api logic Part====================================================//
 
 const createBlog = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
     let data = req.body; //getting data from the req body
     //here we are checking that whether data is available or not in req Body
@@ -94,6 +95,7 @@ const createBlog = async function (req, res) {
 //==================================================getBlog Api logic Part=========================================================//
 
 const getBlog = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
     const queryParams = req.query; //getting data from Query params
     const authId = queryParams.authorId; //get authorID from Query params
@@ -137,6 +139,7 @@ const getBlog = async function (req, res) {
 //=================================================createBlog Api logic Part==========================================//
 
 const updateblog = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
     const blogId = req.params.blogId; //get blogID from path params
     const blogdata = req.body; //get blog Data from req body
@@ -178,6 +181,7 @@ const updateblog = async function (req, res) {
 //=================================================deleteBlogsByParams========================================================//
 
 const deleteBlogs = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
     const blogId = req.params.blogId; //get blogID from path params
 
@@ -215,6 +219,7 @@ const deleteBlogs = async function (req, res) {
 //=================================================deleteBlogsByQuery=======================================================//
 
 const DeleteBlog = async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin',"*")
   try {
     let queryParams = req.query;
     
